@@ -2,10 +2,14 @@ Package: EZRplots
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Shane",
+    c(person(given = "Shane",
            family = "Alman",
            role = c("aut", "cre"),
-           email = "salman@calpoly.edu")
+           email = "salman@calpoly.edu"),
+      person(given = "Ari",
+           family = "Arango",
+           role = c("aut"),
+           email = "asarango@calpoly.edu"))
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
