@@ -9,7 +9,11 @@ Authors@R:
       person(given = "Ari",
            family = "Arango",
            role = c("aut"),
-           email = "asarango@calpoly.edu"))
+           email = "asarango@calpoly.edu"),
+      person(given = "Andrew",
+           family = "Harlow",
+           role = c("aut"),
+           email = "adharlow@calpoly.edu"))
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
