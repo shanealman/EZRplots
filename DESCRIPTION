@@ -18,3 +18,5 @@ Suggests:
     testthat
 Imports: 
     magrittr
+URL: https://github.com/shanealman/EZRplots
+BugReports: https://github.com/shanealman/EZRplots/issues
