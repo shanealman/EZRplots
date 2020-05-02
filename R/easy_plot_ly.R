@@ -11,8 +11,10 @@
 #'
 #' @return A plot
 #'
-#' @importFrom stringr str_detect str_to_title
-#' @importFrom english as.english
+#' @import plotly
+#' @import tidyverse
+#' @import viridis
+#' @import reshape2
 #'
 #' @export
 
