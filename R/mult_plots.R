@@ -15,7 +15,7 @@
 #'
 #' @return Multiple plots side by side
 #'
-#' @importFrom patchwork
+#' @importFrom patchwork plot_layout
 #' @importFrom english as.english
 #'
 #' @export
