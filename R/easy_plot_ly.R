@@ -18,7 +18,7 @@
 #'
 #' @export
 
-easy_plot_ly <- function(x = NULL, y = NULL, z = NULL, color = NULL, type = ..., data = NULL){
+easy_plot_ly <- function(data, x, y, z, color, type = ...){
 
   if(type == 'scatter'){
 
@@ -69,7 +69,7 @@ easy_plot_ly <- function(x = NULL, y = NULL, z = NULL, color = NULL, type = ...,
 #'
 #' @export
 
-add_reg_plane <- function(x, y, z, plot, color = 'pink'){
+add_reg_plane <- function(plot, x, y, z, color = 'pink'){
 
   templm <- lm(z ~ 0 + x + y)
 
@@ -90,20 +90,20 @@ add_reg_plane <- function(x, y, z, plot, color = 'pink'){
 
 #' Edits plot aesthetics
 #'
-#' @param x_axis The x-axis label
-#' @param y_axis The y-axis label
-#' @param z_axis The z-axis label
-#' @param title The plot title
-#' @param colorscale_title The title for the colorscale
-#' @param legend Show legend
+#' @param x_lab The x-axis label. A string
+#' @param y_lab The y-axis label. A string
+#' @param z_lab The z-axis label. A string
+#' @param title The plot title. A string
+#' @param colorscale_title The title for the colorscale. A string
+#' @param legend Show legend. TRUE or FALSE. Defualt is FALSE.
 #' @param plot The plot that you want to add a plane to
 #'
 #' @return aesthetics adjustments for a plot
 #'
 #' @export
 
-theme_ly <- function(x_axis = NULL, y_axis = NULL, z_axis = NULL, title = NULL,
-                    colorscale_title = NULL, legend = FALSE, plot){
+theme_ly <- function(plot, x_lab, y_lab, z_lab, title,
+                     colorscale_title, legend = FALSE){
 
   plot %>% layout(title = title, scene = list(xaxis = list(title = x_axis),
                                               yaxis = list(title = y_axis), zaxis = list(title = z_axis))) %>%
