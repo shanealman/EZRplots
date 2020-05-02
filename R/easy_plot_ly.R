@@ -4,7 +4,9 @@
 #' @param y The y-axis variable
 #' @param z The z-axis variable
 #' @param color A cateogrical or quantitative varaible to subset the data
-#' @param type The type of plot you would like to generate: scatter, line, surface -only takes a z-axis matrix, 3d_density, mesh, or specify nothing to autogenerate a plot
+#' @param type The type of plot you would like to generate: scatter, line,
+#' surface - only takes a z-axis matrix, 3d_density, mesh, or specify nothing to
+#' autogenerate a plot
 #' @param data The datset that will be used
 #'
 #' @return A plot
