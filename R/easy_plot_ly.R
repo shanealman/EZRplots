@@ -88,7 +88,7 @@ add_reg_plane <- function(x, y, z, plot, color = 'pink'){
 
 }
 
-#' Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot
+#' Edits plot aesthetics
 #'
 #' @param x_axis The x-axis label
 #' @param y_axis The y-axis label
@@ -98,7 +98,7 @@ add_reg_plane <- function(x, y, z, plot, color = 'pink'){
 #' @param legend Show legend
 #' @param plot The plot that you want to add a plane to
 #'
-#' @return Aesthetic adjustments to a plot
+#' @return aesthetics adjustments for a plot
 #'
 #' @export
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/easy_plot_ly.R
 \name{theme_ly}
 \alias{theme_ly}
-\title{Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot}
+\title{Edits plot aesthetics}
 \usage{
 theme_ly(
   x_axis = NULL,
@@ -30,8 +30,8 @@ theme_ly(
 \item{plot}{The plot that you want to add a plane to}
 }
 \value{
-Aesthetic adjustments to a plot
+aesthetics adjustments for a plot
 }
 \description{
-Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot
+Edits plot aesthetics
 }
