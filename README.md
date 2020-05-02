@@ -14,4 +14,6 @@ This is a shortcut function to help generate 2D or 3D plots with plot_ly. The us
 This is a function that generates multiple plots of different types. The function uses the package patchwork to make it easy for the user to display multiple plot types at one time. The user will first create the plots they want using the package ggplot2.The user will then input the synatax of the two or more graphs they want to display side by side into the function each as an argument. 
 
 
-## Function 4
+## scatter_func
+
+This is a function that can produce a variety of scatter plots from ggplot2 depending on the inputs that the user chooses to include in the function. Users may input different datasets, variables, colors, and labels to customize their graphs. For variable names, users will need to input their arguments as stings to allow ggplot to work properly within the function.
