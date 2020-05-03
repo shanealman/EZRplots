@@ -19,7 +19,7 @@ easy_plot_ly(x, y, z, color, type, data)
 
 \item{z}{The z-axis variable}
 
-\item{color}{A cateogrical or quantitative varaible to subset the data}
+\item{color}{A cateogrical or quantitative variable to subset the data}
 
 \item{type}{The type of plot you would like to generate: "scatter", "line",
 "surface", "3d_density", "mesh", or "auto" to have plotly generate one for you}
