@@ -2,9 +2,11 @@
 % Please edit documentation in R/easy_plot_ly.R
 \name{add_reg_plane}
 \alias{add_reg_plane}
-\title{Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot}
+\title{Adds a 3D regression plane to a plot.}
 \usage{
-add_reg_plane(x, y, z, plot, color = "blue")
+Recommended that you use this function with a scatter plot.
+
+add_reg_plane(x, y, z , plot, color = 'blue')
 }
 \arguments{
 \item{x}{The x-axis variable}
@@ -21,7 +23,7 @@ add_reg_plane(x, y, z, plot, color = "blue")
 A 3D plane added to an exisiting plot
 }
 \description{
-Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot
+Adds a 3D regression plane to a plot.
 }
 \examples{
 newPlot <- easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,

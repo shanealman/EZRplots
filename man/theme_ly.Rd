@@ -4,16 +4,7 @@
 \alias{theme_ly}
 \title{Edits plot aesthetics}
 \usage{
-theme_ly(
-  xlab = NULL,
-  ylab = NULL,
-  zlab = NULL,
-  title = NULL,
-  colorbar = FALSE,
-  colorscale_title = NULL,
-  legend = FALSE,
-  plot
-)
+theme_ly(xlab, ylab, zlab, title, ...)
 }
 \arguments{
 \item{xlab}{The x-axis label}
