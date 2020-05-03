@@ -31,3 +31,5 @@ Imports:
     magrittr
 URL: https://github.com/shanealman/EZRplots
 BugReports: https://github.com/shanealman/EZRplots/issues
+Depends: 
+    R (>= 2.10)
