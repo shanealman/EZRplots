@@ -1,4 +1,7 @@
-#' A shortcut for generating plots with plot_ly
+#' Easy Plotting with Plotly
+#'
+#' @description This function provides a simple way to generate 2D and 3D plots using the R package
+#' plotly.
 #'
 #' @usage ## x, y, z, and color variables need to be in a vectorized form like x$data or y$data.
 #' ## If you are using the surface plot type, a z variable matrix is all that should be used,
@@ -102,9 +105,11 @@ easy_plot_ly <- function(x = NULL, y = NULL, z = NULL, color = NULL, type = "aut
   }
 }
 
-#' Adds a 3D regression plane to a plot.
+#' 3D Regression Plane
 #'
-#' @usage Recommended that you use this function with a scatter plot.
+#' @description This is a helper function to add a 3D regression plane to a plot
+#'
+#' @usage Recommended that you use this function with a scatter plot
 #'
 #' add_reg_plane(x, y, z , plot, color = 'blue')
 #'
@@ -143,7 +148,9 @@ add_reg_plane <- function(x, y, z, plot, color = 'blue'){
 
 }
 
-#' Edits plot aesthetics
+#' Modify Plot Theme
+#'
+#' @description  This function helps to edit plot aesthetics
 #'
 #' @usage
 #'
