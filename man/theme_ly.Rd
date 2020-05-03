@@ -2,7 +2,7 @@
 % Please edit documentation in R/easy_plot_ly.R
 \name{theme_ly}
 \alias{theme_ly}
-\title{Edits plot aesthetics}
+\title{Modify Plot Theme}
 \usage{
 theme_ly(xlab, ylab, zlab, title, ...)
 }
@@ -27,7 +27,7 @@ theme_ly(xlab, ylab, zlab, title, ...)
 aesthetics adjustments for a plot
 }
 \description{
-Edits plot aesthetics
+This function helps to edit plot aesthetics
 }
 \examples{
 newPlot <- easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,

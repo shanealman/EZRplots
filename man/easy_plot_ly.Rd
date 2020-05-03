@@ -2,7 +2,7 @@
 % Please edit documentation in R/easy_plot_ly.R
 \name{easy_plot_ly}
 \alias{easy_plot_ly}
-\title{A shortcut for generating plots with plot_ly}
+\title{Easy Plotting with Plotly}
 \usage{
 ## x, y, z, and color variables need to be in a vectorized form like x$data or y$data.
 ## If you are using the surface plot type, a z variable matrix is all that should be used,
@@ -30,7 +30,8 @@ easy_plot_ly(x, y, z, color, type, data)
 A 2D or 3D plot based on the package plotly
 }
 \description{
-A shortcut for generating plots with plot_ly
+This function provides a simple way to generate 2D and 3D plots using the R package
+plotly.
 }
 \examples{
            Scatter Plot:
