@@ -6,7 +6,7 @@
 #' @param type_of_map The type of map you wish to specify; possible options are "countries", "us_states"
 #' @param bins_of_map The type of bins user wishes to use for map; must be a vector
 #' @param col_variable_unit The units of your variable; must be in quotes; if it is a percentage, put this argument as "%"
-#' @param title The title of the chloropleth map; must be in quotes
+#' @param title The title of the chloropleth map (must be in quotes)
 #'
 #' @return Leaflet Map
 #'
