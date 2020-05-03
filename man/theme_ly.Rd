@@ -5,33 +5,47 @@
 \title{Edits plot aesthetics}
 \usage{
 theme_ly(
-  x_axis = NULL,
-  y_axis = NULL,
-  z_axis = NULL,
+  xlab = NULL,
+  ylab = NULL,
+  zlab = NULL,
   title = NULL,
+  colorbar = FALSE,
   colorscale_title = NULL,
   legend = FALSE,
   plot
 )
 }
 \arguments{
-\item{x_axis}{The x-axis label}
+\item{xlab}{The x-axis label}
 
-\item{y_axis}{The y-axis label}
+\item{ylab}{The y-axis label}
 
-\item{z_axis}{The z-axis label}
+\item{zlab}{The z-axis label}
 
 \item{title}{The plot title}
+
+\item{colorbar}{Show colorbar}
 
 \item{colorscale_title}{The title for the colorscale}
 
 \item{legend}{Show legend}
 
-\item{plot}{The plot that you want to add a plane to}
+\item{plot}{The plot that you want to change the aesthetics of}
 }
 \value{
 aesthetics adjustments for a plot
 }
 \description{
 Edits plot aesthetics
+}
+\examples{
+newPlot <- easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,
+             color = iris$Species, type = 'scatter', data = iris)
+
+newPlot2 <- add_reg_plane(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,
+plot = newPlot)
+
+theme_ly(xlab = 'Sepal Length', ylab = 'Sepal Width', zlab = 'Petal Length', title = 'Regression',
+legend = F, plot = newPlot2, colorbar = FALSE)
+
 }

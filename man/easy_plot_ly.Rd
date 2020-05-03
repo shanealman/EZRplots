@@ -4,14 +4,13 @@
 \alias{easy_plot_ly}
 \title{A shortcut for generating plots with plot_ly}
 \usage{
-easy_plot_ly(
-  x = NULL,
-  y = NULL,
-  z = NULL,
-  color = NULL,
-  type = ...,
-  data = NULL
-)
+## x, y, z, and color variables need to be in a vectorized form like x$data or y$data.
+## If you are using the surface plot type, a z variable matrix is all that should be used,
+## if non matrix data is put into the funciton for x and y they will be converted to a z matrix
+## Line plots should use quantitative color variables. 3D density plots require only an x and y variable
+## and will create a z matrix for you
+
+easy_plot_ly(x, y, z, color, type, data)
 }
 \arguments{
 \item{x}{The x-axis variable}
@@ -22,15 +21,39 @@ easy_plot_ly(
 
 \item{color}{A cateogrical or quantitative varaible to subset the data}
 
-\item{type}{The type of plot you would like to generate: scatter, line,
-surface - only takes a z-axis matrix, 3d_density, mesh, or specify nothing to
-autogenerate a plot}
+\item{type}{The type of plot you would like to generate: "scatter", "line",
+"surface", "3d_density", "mesh", or "auto" to have plotly generate one for you}
 
 \item{data}{The datset that will be used}
 }
 \value{
-A plot
+A 2D or 3D plot based on the package plotly
 }
 \description{
 A shortcut for generating plots with plot_ly
+}
+\examples{
+           Scatter Plot:
+easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,
+             color = iris$Species, type = 'scatter', data = iris)
+
+
+           Line Plot:
+df1 <- data.frame(x = sin(1:1000), y = cos(1:1000), z = 1:1000)
+easy_plot_ly(x = df1$x, y = df1$y, z = df1$z, color = df1$x, type = 'line', data = df1)
+
+
+           Surface Plot:
+easy_plot_ly(z = volcano, type = 'surface', data = volcano)
+
+
+           3D Density Plot:
+easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, type = '3d_density', data = iris)
+
+
+           Mesh Plot:
+easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,
+             type = 'mesh', data = iris)
+
+
 }

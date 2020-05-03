@@ -4,7 +4,7 @@
 \alias{add_reg_plane}
 \title{Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot}
 \usage{
-add_reg_plane(x, y, z, plot, color = "pink")
+add_reg_plane(x, y, z, plot, color = "blue")
 }
 \arguments{
 \item{x}{The x-axis variable}
@@ -18,8 +18,15 @@ add_reg_plane(x, y, z, plot, color = "pink")
 \item{color}{The color of the plane}
 }
 \value{
-A 3D plane
+A 3D plane added to an exisiting plot
 }
 \description{
 Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot
+}
+\examples{
+newPlot <- easy_plot_ly(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length,
+             color = iris$Species, type = 'scatter', data = iris)
+add_reg_plane(x = iris$Sepal.Length, y = iris$Sepal.Width, z = iris$Petal.Length, plot = newPlot)
+
+
 }
