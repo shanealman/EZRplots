@@ -14,11 +14,11 @@
 #' @importFrom tidyverse
 #'
 #' @export
-<<<<<<< HEAD
-=======
-
->>>>>>> c33a195c159c73b7139c7e5d9017d1da59b7846b
 leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Chloropleth Map"){
+
+  countries <- geojsonio::geojson_read("countries.geojson", what = "sp")
+  us_states <- geojsonio::geojson_read("us-states.json", what = "sp")
+
   #renaming the user input variable names
   data_set <- data_set %>%
     rename(
