@@ -14,7 +14,7 @@
 #' @importFrom dplyr rename
 #'
 #' @export
-leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Chloropleth Map"){
+leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Choropleth Map"){
 
   countries <- data("countries")
   us_states <- data("us_states")
@@ -46,7 +46,7 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   }
   #if the map specified is us states
   else if (type_of_map == "us_states"){
-    data_set_map <- us_states@data %>%
+    data_set_map <- us_states %>%
       sp::merge(data_set, by.x = "name", by.y= "RegionName")  #### ERROR HERE: no column named "name"
     #setView(-96, 37.8, 4)
     ViewLong <- -96
