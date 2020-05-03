@@ -6,7 +6,7 @@
 #' @param type_of_map The type of map you wish to specify; possible options are "countries", "us_states"
 #' @param bins_of_map The type of bins user wishes to use for map; must be a vector
 #' @param col_variable_unit The units of your variable; must be in quotes; if it is a percentage, put this argument as "%"
-#' @param title The title of the chloropleth map; must be in quotes
+#' @param title The title of the chloropleth map (must be in quotes)
 #'
 #' @return Leaflet Map
 #'
@@ -14,7 +14,7 @@
 #' @importFrom dplyr rename
 #'
 #' @export
-leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Chloropleth Map"){
+leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Choropleth Map"){
 
   countries <- data("countries")
   us_states <- data("us_states")
@@ -25,6 +25,7 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
       RegionName = col_name,
       VariableMap = col_variable
     )
+
   #if the map desired if countries
   if (type_of_map == "countries"){
     data_set_map <- countries %>%
@@ -68,6 +69,24 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   #creating bins to put on chloropleth map
   pal <- colorBin("YlOrRd", domain = data_set_map$VariableMap, bins = bins_of_map)
 
+  map <- make_map(data_set_map, ViewLong, ViewLat, ViewSet, labels, labFormatSave, title, pal)
+
+  return(map)
+
+}
+#' Helper function to make the choropleth map
+#'
+#' @param data_set_map The name of the data set
+#' @param ViewLong The longitude to set the view of the map
+#' @param ViewLat The latitude to set the view of the map
+#' @param ViewSet The required zoom of the map
+#' @param labels The labels to use in the map
+#' @param labFormatSave The formatting of the map
+#' @param title The title of the chloropleth map; must be in quotes
+#' @param pal The bins that will be displayed on the map
+#'
+#' @return Leaflet Map
+make_map <- function(data_set_map, ViewLong, ViewLat, ViewSet, labels, labFormatSave, title, pal){
   map <- leaflet(data_set_map) %>%
     setView(ViewLong, ViewLat, ViewSet) %>%
     addTiles() %>%
@@ -100,3 +119,5 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   return(map)
 
 }
+
+
