@@ -25,6 +25,7 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
       RegionName = col_name,
       VariableMap = col_variable
     )
+
   #if the map desired if countries
   if (type_of_map == "countries"){
     data_set_map <- countries %>%
