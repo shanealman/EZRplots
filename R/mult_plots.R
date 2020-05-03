@@ -13,11 +13,13 @@
 #' @param tag_level A string ('keep' or 'new') to indicate how auto-tagging should behave
 #' @param design Specification of the location of areas in the layout
 #'
+#' mult_plots(p1,p2,p3,p4, ncol, nrow, byrow, widths, guides, tag_level, design)
+#'
 #' @return Multiple plots side by side
 #'
-#' @importFrom tidyverse ggplot2
-#' @importFrom patchwork plot_layout
-#' @importFrom english as.english
+#' @import tidyverse
+#' @import patchwork
+#' @import english
 #'
 #' @export
 
