@@ -10,14 +10,14 @@
 #'
 #' @return Leaflet Map
 #'
-#' @importFrom leaflet
-#' @importFrom tidyverse
+#' @import leaflet
+#' @importFrom dplyr rename
 #'
 #' @export
 leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Chloropleth Map"){
 
-  countries <- geojsonio::geojson_read("countries.geojson", what = "sp")
-  us_states <- geojsonio::geojson_read("us-states.json", what = "sp")
+  countries <- data("countries")
+  us_states <- data("us_states")
 
   #renaming the user input variable names
   data_set <- data_set %>%
