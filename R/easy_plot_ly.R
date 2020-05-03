@@ -96,7 +96,11 @@ easy_plot_ly <- function(x = NULL, y = NULL, z = NULL, color = NULL, type = "aut
   }
 }
 
-#' Adds a 3D regression plane to a plot. It is recommended that you use this with a scatter plot
+#' Adds a 3D regression plane to a plot.
+#'
+#' @usage Recommended that you use this function with a scatter plot.
+#'
+#' add_reg_plane(x, y, z , plot, color = 'blue')
 #'
 #' @param x The x-axis variable
 #' @param y The y-axis variable
@@ -134,6 +138,10 @@ add_reg_plane <- function(x, y, z, plot, color = 'blue'){
 }
 
 #' Edits plot aesthetics
+#'
+#' @usage
+#'
+#' theme_ly(xlab, ylab, zlab, title, ...)
 #'
 #' @param xlab The x-axis label
 #' @param ylab The y-axis label
