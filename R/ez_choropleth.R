@@ -10,14 +10,14 @@
 #'
 #' @return Leaflet Map
 #'
-#' @importFrom leaflet
-#' @importFrom tidyverse
+#' @import leaflet
+#' @importFrom dplyr rename
 #'
 #' @export
 leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Chloropleth Map"){
 
-  countries <- geojsonio::geojson_read("countries.geojson", what = "sp")
-  us_states <- geojsonio::geojson_read("us-states.json", what = "sp")
+  countries <- data("countries")
+  us_states <- data("us_states")
 
   #renaming the user input variable names
   data_set <- data_set %>%
@@ -46,8 +46,8 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   }
   #if the map specified is us states
   else if (type_of_map == "us_states"){
-    data_set_map <- us_states %>%
-      sp::merge(data_set, by.x = "name", by.y= "RegionName")
+    data_set_map <- us_states@data %>%
+      sp::merge(data_set, by.x = "name", by.y= "RegionName")  #### ERROR HERE: no column named "name"
     #setView(-96, 37.8, 4)
     ViewLong <- -96
     ViewLat <- 37.8
@@ -68,6 +68,24 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   #creating bins to put on chloropleth map
   pal <- colorBin("YlOrRd", domain = data_set_map$VariableMap, bins = bins_of_map)
 
+  map <- make_map(data_set_map, ViewLong, ViewLat, ViewSet, labels, labFormatSave, title, pal)
+
+  return(map)
+
+}
+#' Helper function to make the choropleth map
+#'
+#' @param data_set_map The name of the data set
+#' @param ViewLong The longitude to set the view of the map
+#' @param ViewLat The latitude to set the view of the map
+#' @param ViewSet The required zoom of the map
+#' @param labels The labels to use in the map
+#' @param labFormatSave The formatting of the map
+#' @param title The title of the chloropleth map; must be in quotes
+#' @param pal The bins that will be displayed on the map
+#'
+#' @return Leaflet Map
+make_map <- function(data_set_map, ViewLong, ViewLat, ViewSet, labels, labFormatSave, title, pal){
   map <- leaflet(data_set_map) %>%
     setView(ViewLong, ViewLat, ViewSet) %>%
     addTiles() %>%
@@ -100,3 +118,5 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   return(map)
 
 }
+
+
