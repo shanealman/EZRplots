@@ -14,7 +14,6 @@
 #' @importFrom tidyverse
 #'
 #' @export
-
 leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_map, col_variable_unit = "", title = "Chloropleth Map"){
   #renaming the user input variable names
   data_set <- data_set %>%
