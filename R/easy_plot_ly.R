@@ -11,7 +11,7 @@
 #' @param x The x-axis variable
 #' @param y The y-axis variable
 #' @param z The z-axis variable
-#' @param color A cateogrical or quantitative varaible to subset the data
+#' @param color A cateogrical or quantitative variable to subset the data
 #' @param type The type of plot you would like to generate: "scatter", "line",
 #' "surface", "3d_density", "mesh", or "auto" to have plotly generate one for you
 #' @param data The datset that will be used
@@ -66,13 +66,19 @@ easy_plot_ly <- function(x = NULL, y = NULL, z = NULL, color = NULL, type = "aut
 
   else if(type == 'surface'){
 
-    if(class(x) != 'matrix' | class(y) != 'matrix' | class(z) != 'matrix'){
+    if(class(x) != 'matrix' & class(y) != 'matrix' & class(z) != 'matrix'){
       z = matrix(x, y)
+
+      plot_ly(z = z, type = 'surface') %>% add_surface( contours = list(
+        z = list(show=TRUE, usecolormap=TRUE, highlightcolor="#ff0000", project=list(z=TRUE)))) %>%
+        hide_colorbar()
     }
 
-    plot_ly(z = z, type = 'surface') %>% add_surface( contours = list(
-      z = list(show=TRUE, usecolormap=TRUE, highlightcolor="#ff0000", project=list(z=TRUE)))) %>%
-      hide_colorbar()
+    else {
+      plot_ly(z = z, type = 'surface') %>% add_surface( contours = list(
+        z = list(show=TRUE, usecolormap=TRUE, highlightcolor="#ff0000", project=list(z=TRUE)))) %>%
+        hide_colorbar()
+    }
   }
 
   else if(type == '3d_density'){
