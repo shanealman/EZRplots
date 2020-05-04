@@ -28,7 +28,7 @@ mult_plots <- function(p1 = NULL, p2 = NULL, p3 = NULL, p4 = NULL, ncol = NULL, 
 
 if (tag_level == tag_level){
 
-  ggplot(data) + plot_layout(tag_level = tag_level)
+  plot_layout(tag_level = tag_level)
 
 }
   
