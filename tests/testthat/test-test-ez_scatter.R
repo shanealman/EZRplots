@@ -36,12 +36,12 @@ test_that("ez_scatter function works", {
 
   expect_equal(my_plot5, correct_plot5)
 
-  correct_plot5 <- ggplot(iris, aes_string(x = "Sepal.Width", y = "Sepal.Length")) +
+  correct_plot6 <- ggplot(iris, aes_string(x = "Sepal.Width", y = "Sepal.Length")) +
     geom_point(aes_string(color = "Species", shape = "Species")) +
     scale_colour_brewer(palette = "Dark2")
 
-  my_plot5 <- ez_scatter(data = iris, x_num = "Sepal.Width", y_num =  "Sepal.Length", z_cat = "Species", color = "Dark2", shape = "Species")
+  my_plot6 <- ez_scatter(data = iris, x_num = "Sepal.Width", y_num =  "Sepal.Length", z_cat = "Species", color = "Dark2", shape = "Species")
 
-  expect_equal(my_plot5, correct_plot5)
+  expect_equal(my_plot6, correct_plot6)
 
 })
