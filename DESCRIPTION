@@ -18,7 +18,10 @@ Authors@R:
            family = "Green",
            role = c("aut"),
            email = "agreen29@calpoly.edu"))
-Description: This package will provide easy implementation of creating otherwise difficult plots. (extend this description to be a paragraph long)
+Description: This package will provide easy implementation of creating otherwise difficult plots. Users will simply
+have to just input the data of their choice, and the output will be plots already created to their liking! This package
+is an easy alternative to be able to create advanced plots without having to do hours of researching! The time and effort 
+spent to make visually aesthetic plots will now be saved thanks to EZRplots!
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
