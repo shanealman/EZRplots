@@ -5,23 +5,6 @@
 #' @param p3 The third plot
 #' @param p4 The fourth plot
 #'
-#' mult_plots(p1,p2,p3,p4)
-#'
-#' @example
-#' p1 <- ggplot(mpg) +
-#'geom_point(aes(hwy, displ))
-#'
-#'p2 <- ggplot(mpg) +
-#'  geom_bar(aes(manufacturer, fill = stat(count))) +
-#'  coord_flip()
-#'
-#'p3 <- ggplot(mpg) +
-#'  geom_smooth(aes(hwy, cty)) +
-#'  facet_wrap(~year)
-#'
-#'p4 <- ggplot(mpg) +
-#'  geom_tile(aes(factor(cyl), drv, fill = stat(count)), stat = 'bin2d')
-#'
 #'mult_plots(p1, p2, p3, p4)
 #'
 #' @return Multiple plots side by side
