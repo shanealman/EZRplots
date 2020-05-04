@@ -33,6 +33,7 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
     ViewLong <- 14
     ViewLat <- 0
     ViewSet <- 2
+
     #initializing the labels
     if(col_variable_unit == "%"){
       labels <- paste(data_set_map$ADMIN,": ", paste(round(data_set_map$VariableMap*100, digits = 2), "%", sep = ""))
@@ -52,11 +53,13 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
     ViewLong <- -96
     ViewLat <- 37.8
     ViewSet <- 4
+
     #initializing the labels
     if(col_variable_unit == "%"){
       labels <- paste(data_set_map$name,":", paste(round(data_set_map$VariableMap*100, digits = 2), "%", sep = ""))
       labFormatSave <- labelFormat(suffix = "%", transform = function(x) x*100)
     }
+
     #if the labels are not percentages
     else{
       labels <- paste(data_set_map$name, ": ", paste(round(data_set_map$VariableMap, digits = 2)," ", col_variable_unit, sep = ""))
