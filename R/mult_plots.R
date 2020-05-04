@@ -37,7 +37,7 @@ mult_plots <- function(p1 = NULL, p2 = NULL, p3 = NULL, p4 = NULL) {
 
 
 
-p1 + p2 + p3 + p4
+plots = p1 + p2 + p3 + p4
 
-
+return(plots)
 }
