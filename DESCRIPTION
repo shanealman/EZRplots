@@ -17,7 +17,8 @@ Authors@R:
       person(given = "Allison",
            family = "Green",
            role = c("aut"),
-           email = "agreen29@calpoly.edu"))
+           email = "agreen29@calpoly.edu")
+           )
 Description: This package will provide easy implementation of creating otherwise difficult plots. Users will simply
 have to just input the data of their choice, and the output will be plots already created to their liking! This package
 is an easy alternative to be able to create advanced plots without having to do hours of researching! The time and effort 
