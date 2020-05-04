@@ -1,4 +1,4 @@
-test_that("ez_scatter function works", {
+test_that("ez_scatter function output matches type", {
 
   correct_plot1 <- typeof(ggplot(iris, aes_string(x = "Sepal.Width", y = "Sepal.Length")) +
     geom_point())
@@ -30,7 +30,7 @@ test_that("ez_scatter function works", {
   expect_equal(my_plot4, correct_plot4)
 
   correct_plot5 <- typeof(ggplot(iris, aes_string(x = "Sepal.Width", y = "Sepal.Length")) +
-    geom_point(aes_string(shape = shape)))
+    geom_point(aes_string(shape = "Species")))
 
   my_plot5 <- typeof(ez_scatter(data = iris, x_num = "Sepal.Width", y_num =  "Sepal.Length", shape = "Species"))
 
@@ -43,5 +43,23 @@ test_that("ez_scatter function works", {
   my_plot6 <- typeof(ez_scatter(data = iris, x_num = "Sepal.Width", y_num =  "Sepal.Length", z_cat = "Species", color = "Dark2", shape = "Species"))
 
   expect_equal(my_plot6, correct_plot6)
+
+})
+
+test_that("ez_labels function output matches type", {
+
+  plot <- ggplot(iris, aes_string(x = "Sepal.Width", y = "Sepal.Length")) +
+    geom_point()
+
+  correct_graph <- typeof(plot +
+    labs( title = "Sepal Width vs Length", x = "Sepal.Width", y = "Sepal.Length") +
+    theme(
+      plot.title = element_text(color = "Red", size = 20, face = "bold.italic"),
+      axis.title.x = element_text(color = "black", size = 14, face = "bold"),
+      axis.title.y = element_text(color = "black", size = 14, face = "bold")))
+
+  my_graph <- typeof(ez_labels(plot = plot, title = "Sepal Width vs Length", x = "Sepal.Width", y = "Sepal.Length", title_color = "Red", axis_color = "black", title_type = "bold.italic", axis_type = "bold"))
+
+  expect_equal(corect_graph, my_graph)
 
 })
