@@ -5,8 +5,6 @@
 
 You can install the the development version from [GitHub](https://github.com/) with:
 
-<<<<<<< HEAD
-=======
 ``` r
 # install.packages("devtools")
 devtools::install_github("shanealman/EZRplots")
@@ -16,14 +14,16 @@ devtools::install_github("shanealman/EZRplots")
 library(EZRplots)
 ```
 
->>>>>>> master
-
 ## leafletPlot
 The first function will create a chloropleth map for the user. The user will input the data set they wish to use for the map, which will have 2 columns: the names of their designated region and the variable of interest. The user will then specify which map they wish to display: whether it is all the countries, the states, global regions, etc. The user will have the option to specify additional parameters stating the units of their variable, how many bins for the legend they wish to create, etc. The function will return the resulting cloropleth map altered to the users' desires.
 
-Example with data set CountryData, with columns Name and Percent:
+Example with data set Country_Data, with columns Country_Name and Percent:
 ```{r}
-leafletPlot(data_set = CountryData, col_name = "Name", col_variable = "Percent", type_of_map = "countries", bins_of_map = (0:5*.2), col_variable_unit = "%", title = "Choropleth Map of Country Data")
+leafletPlot(data_set = Country_Data, col_name = "Country_Name", col_variable = "Percent", type_of_map = "countries", bins_of_map = (0:5*.2), col_variable_unit = "%", title = "Choropleth Map of Country Data")
+```
+Example with data set US_States_Data, with columns State_Name and Votes:
+```{r}
+leafletPlot(data_set = US_States_Data, col_name = "State_Name", col_variable = "Votes", type_of_map = "us_states", bins_of_map = (0:5*2), col_variable_unit = "votes", title = "Choropleth Map of State Votes")
 ```
 
 ## easy_plot_ly
