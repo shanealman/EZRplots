@@ -29,6 +29,7 @@
 #' @import tidyverse
 #' @import patchwork
 #' @import english
+#' @import ggplot2
 #'
 #' @export
 
