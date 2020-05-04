@@ -31,6 +31,12 @@ if (tag_level == tag_level){
   plot_layout(tag_level = tag_level)
 
 }
+ 
+if (design == design){
+
+    plot_layout(design = design)
+
+}
   
 p1 + p2 + p3 + p4
 
