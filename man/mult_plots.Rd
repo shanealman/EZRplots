@@ -8,15 +8,7 @@ mult_plots(
   p1 = NULL,
   p2 = NULL,
   p3 = NULL,
-  p4 = NULL,
-  ncol = NULL,
-  nrow = NULL,
-  byrow = NULL,
-  widths = NULL,
-  heights = NULL,
-  guides = NULL,
-  tag_level = NULL,
-  design = NULL
+  p4 = NULL
 )
 }
 \arguments{
@@ -28,23 +20,7 @@ mult_plots(
 
 \item{p4}{The fourth plot}
 
-\item{ncol}{The dimensions of the grid to create}
-
-\item{nrow}{The dimensions of the grid to create}
-
-\item{byrow}{If FALSE the plots will be filled in in column-major order}
-
-\item{widths}{The widths of each row and column in the grid}
-
-\item{heights}{The heights of each row and column in the grid}
-
-\item{guides}{A string specifying how guides should be treated in the layout}
-
-\item{tag_level}{A string ('keep' or 'new') to indicate how auto-tagging should behave}
-
-\item{design}{Specification of the location of areas in the layout
-
-mult_plots(p1,p2,p3,p4, ncol, nrow, byrow, widths, guides, tag_level, design)}
+mult_plots(p1,p2,p3,p4)}
 }
 \value{
 Multiple plots side by side
