@@ -5,7 +5,7 @@
 #' @param col_variable The column name containing the variable of interest (must be in quotes)
 #' @param type_of_map The type of map you wish to specify; possible options are "countries", "us_states"
 #' @param bins_of_map The type of bins user wishes to use for map; must be a vector
-#' @param col_variable_unit The units of your variable; must be in quotes; if it is a percentage, put this argument as "%"
+#' @param col_variable_unit The units of your variable (must be in quotes); if it is a percentage, put this argument as "%"
 #' @param title The title of the chloropleth map (must be in quotes)
 #'
 #' @return Leaflet Map
@@ -48,8 +48,7 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
   #if the map specified is us states
   else if (type_of_map == "us_states"){
     data_set_map <- us_states %>%
-      sp::merge(data_set, by.x = "name", by.y= "RegionName")  
-    #setView(-96, 37.8, 4)
+      sp::merge(data_set, by.x = "name", by.y= "RegionName")
     ViewLong <- -96
     ViewLat <- 37.8
     ViewSet <- 4
@@ -82,7 +81,7 @@ leafletPlot <- function(data_set, col_name, col_variable, type_of_map, bins_of_m
 #' @param ViewSet The required zoom of the map
 #' @param labels The labels to use in the map
 #' @param labFormatSave The formatting of the map
-#' @param title The title of the chloropleth map; must be in quotes
+#' @param title The title of the chloropleth map (must be in quotes)
 #' @param pal The bins that will be displayed on the map
 #'
 #' @return Leaflet Map
