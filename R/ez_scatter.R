@@ -66,8 +66,6 @@ ez_scatter <- function(data, x_num, y_num, z_cat = NULL, color = NULL, shape = N
 #'
 #' @return A plot
 #'
-#' @import ggplot2
-#'
 #' @export
 
 ez_labels <- function(plot, title, x = NULL, y = NULL, title_color = NULL, axis_color = NULL, title_type = NULL, axis_type = NULL){
