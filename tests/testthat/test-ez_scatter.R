@@ -60,6 +60,6 @@ test_that("ez_labels function output matches type", {
 
   my_graph <- typeof(ez_labels(plot = plot, title = "Sepal Width vs Length", x = "Sepal.Width", y = "Sepal.Length", title_color = "Red", axis_color = "black", title_type = "bold.italic", axis_type = "bold"))
 
-  expect_equal(corect_graph, my_graph)
+  expect_equal(correct_graph, my_graph)
 
 })
