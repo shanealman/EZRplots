@@ -26,7 +26,10 @@
 mult_plots <- function(p1 = NULL, p2 = NULL, p3 = NULL, p4 = NULL, ncol = NULL, nrow = NULL, byrow = NULL,
                        widths = NULL, heights = NULL, guides = NULL, tag_level = NULL, design = NULL) {
 
-
+if (tag_level = tag_level){
+  plot_layout(tag_level == tag_level)
+}
+  
 p1 + p2 + p3 + p4
 
 
