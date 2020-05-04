@@ -32,7 +32,7 @@ if (tag_level == tag_level){
 
 }
  
-if (design == design){
+else if (design == design){
 
     plot_layout(design = design)
 
